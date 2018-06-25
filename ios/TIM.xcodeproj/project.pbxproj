@@ -1,0 +1,348 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B21A89B020B6B3F60094F404 /* TIM.m in Sources */ = {isa = PBXBuildFile; fileRef = B21A89AE20B6B3F60094F404 /* TIM.m */; };
+		B260C1BB20B7AAC300748266 /* ImSDK in Frameworks */ = {isa = PBXBuildFile; fileRef = B260C1BA20B7AAC300748266 /* ImSDK */; };
+		B260C1C120B7AAE900748266 /* IMMessageExt in Frameworks */ = {isa = PBXBuildFile; fileRef = B260C1C020B7AAE900748266 /* IMMessageExt */; };
+		B260C1C920B7AB1100748266 /* TLSSDK in Frameworks */ = {isa = PBXBuildFile; fileRef = B260C1C820B7AB1100748266 /* TLSSDK */; };
+		B260C20820B7AD0800748266 /* QALSDK in Frameworks */ = {isa = PBXBuildFile; fileRef = B260C20720B7AD0800748266 /* QALSDK */; };
+		B2887E6720BB93A000EDBD42 /* TIM_ConnListener.m in Sources */ = {isa = PBXBuildFile; fileRef = B2887E6620BB93A000EDBD42 /* TIM_ConnListener.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B21A898C20B6B3870094F404 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		B21A898E20B6B3870094F404 /* libTIM.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTIM.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B21A89AE20B6B3F60094F404 /* TIM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIM.m; sourceTree = "<group>"; };
+		B21A89AF20B6B3F60094F404 /* TIM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIM.h; sourceTree = "<group>"; };
+		B260C1BA20B7AAC300748266 /* ImSDK */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = ImSDK; path = ImSDK.framework/ImSDK; sourceTree = SOURCE_ROOT; };
+		B260C1C020B7AAE900748266 /* IMMessageExt */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = IMMessageExt; path = IMMessageExt.framework/IMMessageExt; sourceTree = SOURCE_ROOT; };
+		B260C1C820B7AB1100748266 /* TLSSDK */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = TLSSDK; path = TLSSDK.framework/TLSSDK; sourceTree = SOURCE_ROOT; };
+		B260C20720B7AD0800748266 /* QALSDK */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = QALSDK; path = QALSDK.framework/QALSDK; sourceTree = SOURCE_ROOT; };
+		B2887E6520BB93A000EDBD42 /* TIM_ConnListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TIM_ConnListener.h; sourceTree = "<group>"; };
+		B2887E6620BB93A000EDBD42 /* TIM_ConnListener.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TIM_ConnListener.m; sourceTree = "<group>"; };
+		B2887E6820BB954100EDBD42 /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B21A898B20B6B3870094F404 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B260C20820B7AD0800748266 /* QALSDK in Frameworks */,
+				B260C1C120B7AAE900748266 /* IMMessageExt in Frameworks */,
+				B260C1C920B7AB1100748266 /* TLSSDK in Frameworks */,
+				B260C1BB20B7AAC300748266 /* ImSDK in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B21A898520B6B3870094F404 = {
+			isa = PBXGroup;
+			children = (
+				B21A899020B6B3870094F404 /* TIM */,
+				B21A898F20B6B3870094F404 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B21A898F20B6B3870094F404 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B21A898E20B6B3870094F404 /* libTIM.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B21A899020B6B3870094F404 /* TIM */ = {
+			isa = PBXGroup;
+			children = (
+				B260C20720B7AD0800748266 /* QALSDK */,
+				B260C1C820B7AB1100748266 /* TLSSDK */,
+				B260C1C020B7AAE900748266 /* IMMessageExt */,
+				B260C1BA20B7AAC300748266 /* ImSDK */,
+				B21A89AF20B6B3F60094F404 /* TIM.h */,
+				B21A89AE20B6B3F60094F404 /* TIM.m */,
+				B2887E6520BB93A000EDBD42 /* TIM_ConnListener.h */,
+				B2887E6620BB93A000EDBD42 /* TIM_ConnListener.m */,
+				B2887E6820BB954100EDBD42 /* Define.h */,
+			);
+			path = TIM;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B21A898D20B6B3870094F404 /* TIM */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B21A899720B6B3870094F404 /* Build configuration list for PBXNativeTarget "TIM" */;
+			buildPhases = (
+				B21A898A20B6B3870094F404 /* Sources */,
+				B21A898B20B6B3870094F404 /* Frameworks */,
+				B21A898C20B6B3870094F404 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TIM;
+			productName = TIM;
+			productReference = B21A898E20B6B3870094F404 /* libTIM.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B21A898620B6B3870094F404 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = shanghaiDouke.com;
+				TargetAttributes = {
+					B21A898D20B6B3870094F404 = {
+						CreatedOnToolsVersion = 9.3;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = B21A898920B6B3870094F404 /* Build configuration list for PBXProject "TIM" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B21A898520B6B3870094F404;
+			productRefGroup = B21A898F20B6B3870094F404 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B21A898D20B6B3870094F404 /* TIM */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B21A898A20B6B3870094F404 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2887E6720BB93A000EDBD42 /* TIM_ConnListener.m in Sources */,
+				B21A89B020B6B3F60094F404 /* TIM.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		B21A899520B6B3870094F404 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B21A899620B6B3870094F404 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B21A899820B6B3870094F404 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E9J732K284;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ImSDK.framework",
+					"$(PROJECT_DIR)/IMFriendshipExt.framework",
+					"$(PROJECT_DIR)/IMGroupExt.framework",
+					"$(PROJECT_DIR)/IMMessageExt.framework",
+					"$(PROJECT_DIR)/IMSDKBugly.framework",
+					"$(PROJECT_DIR)/IMUGCExt.framework",
+					"$(PROJECT_DIR)/QALHttpSDK.framework",
+					"$(PROJECT_DIR)/TLSSDK.framework",
+					"$(PROJECT_DIR)/TXRTMPSDK.framework",
+					"$(PROJECT_DIR)/QALSDK.framework",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B21A899920B6B3870094F404 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E9J732K284;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ImSDK.framework",
+					"$(PROJECT_DIR)/IMFriendshipExt.framework",
+					"$(PROJECT_DIR)/IMGroupExt.framework",
+					"$(PROJECT_DIR)/IMMessageExt.framework",
+					"$(PROJECT_DIR)/IMSDKBugly.framework",
+					"$(PROJECT_DIR)/IMUGCExt.framework",
+					"$(PROJECT_DIR)/QALHttpSDK.framework",
+					"$(PROJECT_DIR)/TLSSDK.framework",
+					"$(PROJECT_DIR)/TXRTMPSDK.framework",
+					"$(PROJECT_DIR)/QALSDK.framework",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B21A898920B6B3870094F404 /* Build configuration list for PBXProject "TIM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B21A899520B6B3870094F404 /* Debug */,
+				B21A899620B6B3870094F404 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B21A899720B6B3870094F404 /* Build configuration list for PBXNativeTarget "TIM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B21A899820B6B3870094F404 /* Debug */,
+				B21A899920B6B3870094F404 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B21A898620B6B3870094F404 /* Project object */;
+}

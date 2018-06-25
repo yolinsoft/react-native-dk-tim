@@ -1,0 +1,19 @@
+{
+  "name": "react-native-dk-tim",
+  "version": "1.0.0",
+  "description": "react native 腾讯 云通讯",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Magic",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yolinsoft/react-native-dk-tim.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yolinsoft/react-native-dk-tim/issues"
+  },
+  "homepage": "https://github.com/yolinsoft/react-native-dk-tim#readme"
+}
