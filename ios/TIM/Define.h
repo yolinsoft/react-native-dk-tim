@@ -8,7 +8,15 @@
 
 #ifndef Define_h
 #define Define_h
+#import "YYModel.h"
+#import "imSDK/imSDK.h"
+#import <IMMessageExt/IMMessageExt.h>
 
 #define EVENT_CONNECTION @"Connection"//连接状态
 #define EVENT_MESSAGE @"Message" // 收到的消息
+#define EVENT_MsgLocator @"MsgLocator" //消息回撤
+#define EVENT_UploaderProgress @"UploaderProgress" //上传进度
+#define EVENT_groupTips  @"groupTips" //群事件 
+typedef void(^requestSucceed)(NSString *code,id data);
+typedef void(^requestFail)(NSString *code,NSString *err);
 #endif /* Define_h */

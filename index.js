@@ -19,4 +19,7 @@ export default class TIM {
   static sendMsg(params) {
     return tim.sendMsg(params);
   }
+  static getConversaionList() {
+    return tim.getConversaionList();
+  }
 }

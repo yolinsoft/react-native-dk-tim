@@ -3,16 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B20EB31020BE8E14003533B2 /* TIM_Push.m in Sources */ = {isa = PBXBuildFile; fileRef = B20EB30F20BE8E14003533B2 /* TIM_Push.m */; };
 		B21A89B020B6B3F60094F404 /* TIM.m in Sources */ = {isa = PBXBuildFile; fileRef = B21A89AE20B6B3F60094F404 /* TIM.m */; };
+		B25F023D20C14930004D1F50 /* IMGroupExt in Frameworks */ = {isa = PBXBuildFile; fileRef = B25F023C20C14930004D1F50 /* IMGroupExt */; };
 		B260C1BB20B7AAC300748266 /* ImSDK in Frameworks */ = {isa = PBXBuildFile; fileRef = B260C1BA20B7AAC300748266 /* ImSDK */; };
 		B260C1C120B7AAE900748266 /* IMMessageExt in Frameworks */ = {isa = PBXBuildFile; fileRef = B260C1C020B7AAE900748266 /* IMMessageExt */; };
 		B260C1C920B7AB1100748266 /* TLSSDK in Frameworks */ = {isa = PBXBuildFile; fileRef = B260C1C820B7AB1100748266 /* TLSSDK */; };
 		B260C20820B7AD0800748266 /* QALSDK in Frameworks */ = {isa = PBXBuildFile; fileRef = B260C20720B7AD0800748266 /* QALSDK */; };
-		B2887E6720BB93A000EDBD42 /* TIM_ConnListener.m in Sources */ = {isa = PBXBuildFile; fileRef = B2887E6620BB93A000EDBD42 /* TIM_ConnListener.m */; };
+		B26901CC20BD40AC0034F583 /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B26901C920BD40AB0034F583 /* NSObject+YYModel.m */; };
+		B26901CD20BD40AC0034F583 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B26901CA20BD40AB0034F583 /* YYClassInfo.m */; };
+		B26901D020BD47560034F583 /* TIM_MsgHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B26901CF20BD47560034F583 /* TIM_MsgHandler.m */; };
+		B2887E6720BB93A000EDBD42 /* TIM_EventListener.m in Sources */ = {isa = PBXBuildFile; fileRef = B2887E6620BB93A000EDBD42 /* TIM_EventListener.m */; };
+		B2BFC49220BFCB630053BA7F /* TIM_ConversionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2BFC49120BFCB630053BA7F /* TIM_ConversionManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,16 +34,28 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B20EB30E20BE8E14003533B2 /* TIM_Push.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TIM_Push.h; sourceTree = "<group>"; };
+		B20EB30F20BE8E14003533B2 /* TIM_Push.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TIM_Push.m; sourceTree = "<group>"; };
 		B21A898E20B6B3870094F404 /* libTIM.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTIM.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B21A89AE20B6B3F60094F404 /* TIM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIM.m; sourceTree = "<group>"; };
 		B21A89AF20B6B3F60094F404 /* TIM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIM.h; sourceTree = "<group>"; };
+		B25F023C20C14930004D1F50 /* IMGroupExt */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = IMGroupExt; path = TIM/IMGroupExt; sourceTree = SOURCE_ROOT; };
 		B260C1BA20B7AAC300748266 /* ImSDK */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = ImSDK; path = ImSDK.framework/ImSDK; sourceTree = SOURCE_ROOT; };
 		B260C1C020B7AAE900748266 /* IMMessageExt */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = IMMessageExt; path = IMMessageExt.framework/IMMessageExt; sourceTree = SOURCE_ROOT; };
 		B260C1C820B7AB1100748266 /* TLSSDK */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = TLSSDK; path = TLSSDK.framework/TLSSDK; sourceTree = SOURCE_ROOT; };
 		B260C20720B7AD0800748266 /* QALSDK */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = QALSDK; path = QALSDK.framework/QALSDK; sourceTree = SOURCE_ROOT; };
-		B2887E6520BB93A000EDBD42 /* TIM_ConnListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TIM_ConnListener.h; sourceTree = "<group>"; };
-		B2887E6620BB93A000EDBD42 /* TIM_ConnListener.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TIM_ConnListener.m; sourceTree = "<group>"; };
+		B26901C720BD40AB0034F583 /* YYClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYClassInfo.h; sourceTree = "<group>"; };
+		B26901C820BD40AB0034F583 /* YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYModel.h; sourceTree = "<group>"; };
+		B26901C920BD40AB0034F583 /* NSObject+YYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YYModel.m"; sourceTree = "<group>"; };
+		B26901CA20BD40AB0034F583 /* YYClassInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYClassInfo.m; sourceTree = "<group>"; };
+		B26901CB20BD40AB0034F583 /* NSObject+YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YYModel.h"; sourceTree = "<group>"; };
+		B26901CE20BD47560034F583 /* TIM_MsgHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TIM_MsgHandler.h; sourceTree = "<group>"; };
+		B26901CF20BD47560034F583 /* TIM_MsgHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TIM_MsgHandler.m; sourceTree = "<group>"; };
+		B2887E6520BB93A000EDBD42 /* TIM_EventListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TIM_EventListener.h; sourceTree = "<group>"; };
+		B2887E6620BB93A000EDBD42 /* TIM_EventListener.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TIM_EventListener.m; sourceTree = "<group>"; };
 		B2887E6820BB954100EDBD42 /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
+		B2BFC49020BFCB630053BA7F /* TIM_ConversionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TIM_ConversionManager.h; sourceTree = "<group>"; };
+		B2BFC49120BFCB630053BA7F /* TIM_ConversionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TIM_ConversionManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B25F023D20C14930004D1F50 /* IMGroupExt in Frameworks */,
 				B260C20820B7AD0800748266 /* QALSDK in Frameworks */,
 				B260C1C120B7AAE900748266 /* IMMessageExt in Frameworks */,
 				B260C1C920B7AB1100748266 /* TLSSDK in Frameworks */,
@@ -74,17 +93,37 @@
 		B21A899020B6B3870094F404 /* TIM */ = {
 			isa = PBXGroup;
 			children = (
+				B26901C620BD40AB0034F583 /* YYModel */,
 				B260C20720B7AD0800748266 /* QALSDK */,
+				B25F023C20C14930004D1F50 /* IMGroupExt */,
 				B260C1C820B7AB1100748266 /* TLSSDK */,
 				B260C1C020B7AAE900748266 /* IMMessageExt */,
 				B260C1BA20B7AAC300748266 /* ImSDK */,
 				B21A89AF20B6B3F60094F404 /* TIM.h */,
 				B21A89AE20B6B3F60094F404 /* TIM.m */,
-				B2887E6520BB93A000EDBD42 /* TIM_ConnListener.h */,
-				B2887E6620BB93A000EDBD42 /* TIM_ConnListener.m */,
+				B2887E6520BB93A000EDBD42 /* TIM_EventListener.h */,
+				B2887E6620BB93A000EDBD42 /* TIM_EventListener.m */,
 				B2887E6820BB954100EDBD42 /* Define.h */,
+				B26901CE20BD47560034F583 /* TIM_MsgHandler.h */,
+				B26901CF20BD47560034F583 /* TIM_MsgHandler.m */,
+				B20EB30E20BE8E14003533B2 /* TIM_Push.h */,
+				B20EB30F20BE8E14003533B2 /* TIM_Push.m */,
+				B2BFC49020BFCB630053BA7F /* TIM_ConversionManager.h */,
+				B2BFC49120BFCB630053BA7F /* TIM_ConversionManager.m */,
 			);
 			path = TIM;
+			sourceTree = "<group>";
+		};
+		B26901C620BD40AB0034F583 /* YYModel */ = {
+			isa = PBXGroup;
+			children = (
+				B26901C820BD40AB0034F583 /* YYModel.h */,
+				B26901C920BD40AB0034F583 /* NSObject+YYModel.m */,
+				B26901C720BD40AB0034F583 /* YYClassInfo.h */,
+				B26901CA20BD40AB0034F583 /* YYClassInfo.m */,
+				B26901CB20BD40AB0034F583 /* NSObject+YYModel.h */,
+			);
+			path = YYModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,12 +157,11 @@
 				TargetAttributes = {
 					B21A898D20B6B3870094F404 = {
 						CreatedOnToolsVersion = 9.3;
-						ProvisioningStyle = Automatic;
 					};
 				};
 			};
 			buildConfigurationList = B21A898920B6B3870094F404 /* Build configuration list for PBXProject "TIM" */;
-			compatibilityVersion = "Xcode 8.0";
+			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -144,7 +182,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2887E6720BB93A000EDBD42 /* TIM_ConnListener.m in Sources */,
+				B26901D020BD47560034F583 /* TIM_MsgHandler.m in Sources */,
+				B26901CD20BD40AC0034F583 /* YYClassInfo.m in Sources */,
+				B26901CC20BD40AC0034F583 /* NSObject+YYModel.m in Sources */,
+				B2887E6720BB93A000EDBD42 /* TIM_EventListener.m in Sources */,
+				B20EB31020BE8E14003533B2 /* TIM_Push.m in Sources */,
+				B2BFC49220BFCB630053BA7F /* TIM_ConversionManager.m in Sources */,
 				B21A89B020B6B3F60094F404 /* TIM.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,6 +316,20 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/TIM/QALSDKHeaders",
+					"$(PROJECT_DIR)/TIM/TLSDKHeaders/QALSDKHeaders",
+					"$(PROJECT_DIR)/TIM/TLSDKHeaders",
+					"$(PROJECT_DIR)/TIM/IMSDKHeaders",
+					"$(PROJECT_DIR)/TIM/ImSDK.framework",
+					"$(PROJECT_DIR)/TIM/QALSDK.framework",
+					"$(PROJECT_DIR)/TIM/TLSSDK.framework",
+					"$(PROJECT_DIR)/TIM/IMFriendshipExt.framework",
+					"$(PROJECT_DIR)/TIM/IMGroupExt.framework",
+					"$(PROJECT_DIR)/TIM/IMMessageExt.framework",
+					"$(PROJECT_DIR)/TIM/IMSDKBugly.framework",
+					"$(PROJECT_DIR)/TIM/IMUGCExt.framework",
+					"$(PROJECT_DIR)/TIM/QALHttpSDK.framework",
+					"$(PROJECT_DIR)/TIM/TXRTMPSDK.framework",
 					"$(PROJECT_DIR)/ImSDK.framework",
 					"$(PROJECT_DIR)/IMFriendshipExt.framework",
 					"$(PROJECT_DIR)/IMGroupExt.framework",
@@ -303,6 +360,20 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/TIM/QALSDKHeaders",
+					"$(PROJECT_DIR)/TIM/TLSDKHeaders/QALSDKHeaders",
+					"$(PROJECT_DIR)/TIM/TLSDKHeaders",
+					"$(PROJECT_DIR)/TIM/IMSDKHeaders",
+					"$(PROJECT_DIR)/TIM/ImSDK.framework",
+					"$(PROJECT_DIR)/TIM/QALSDK.framework",
+					"$(PROJECT_DIR)/TIM/TLSSDK.framework",
+					"$(PROJECT_DIR)/TIM/IMFriendshipExt.framework",
+					"$(PROJECT_DIR)/TIM/IMGroupExt.framework",
+					"$(PROJECT_DIR)/TIM/IMMessageExt.framework",
+					"$(PROJECT_DIR)/TIM/IMSDKBugly.framework",
+					"$(PROJECT_DIR)/TIM/IMUGCExt.framework",
+					"$(PROJECT_DIR)/TIM/QALHttpSDK.framework",
+					"$(PROJECT_DIR)/TIM/TXRTMPSDK.framework",
 					"$(PROJECT_DIR)/ImSDK.framework",
 					"$(PROJECT_DIR)/IMFriendshipExt.framework",
 					"$(PROJECT_DIR)/IMGroupExt.framework",

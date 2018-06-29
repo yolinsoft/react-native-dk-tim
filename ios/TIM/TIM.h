@@ -9,7 +9,8 @@
 //#import <Foundation/Foundation.h>
 #import <React/RCTBridgeModule.h>
 #import <React/RCTEventEmitter.h>
-#import "imSDK/imSDK.h"
+#import <React/RCTConvert.h>
+#import "Define.h"
 #import "TLSSDK/TLSRefreshTicketListener.h"
 #import "TLSSDK/TLSOpenLoginListener.h"
 #import "TLSSDK/TLSHelper.h"

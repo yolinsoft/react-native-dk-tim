@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "imSDK/imSDK.h"
-@interface TIM_ConnListener : NSObject<TIMConnListener>
+#import "Define.h"
+@interface TIM_EventListener : NSObject<TIMConnListener,TIMMessageRevokeListener,TIMUploadProgressListener,TIMGroupEventListener>
 
 @end
+
