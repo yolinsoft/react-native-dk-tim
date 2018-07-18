@@ -14,6 +14,6 @@
 #import "TLSSDK/TLSRefreshTicketListener.h"
 #import "TLSSDK/TLSOpenLoginListener.h"
 #import "TLSSDK/TLSHelper.h"
-@interface TIM : RCTEventEmitter<TIMMessageListener,TIMUserStatusListener,TLSRefreshTicketListener,TIMRefreshListener,TIMMessageReceiptListener,RCTBridgeModule>
+@interface TIM : RCTEventEmitter<TIMMessageListener,TLSRefreshTicketListener,TIMRefreshListener,TIMMessageReceiptListener,RCTBridgeModule>
 
 @end

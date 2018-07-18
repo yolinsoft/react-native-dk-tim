@@ -172,7 +172,15 @@ public class ImMessage {
 
         //添加图片
         TIMImageElem elem = new TIMImageElem();
-        elem.setPath(PathConvert.getRealPathFromUri(context, Uri.parse(msgMap.getString("path"))));
+
+        //elem.setPath(PathConvert.getRealPathFromUri(context, Uri.parse(msgMap.getString("path"))));
+
+        //手动过滤"file://"开头
+        String imagePath = msgMap.getString("path");
+        if (imagePath.startsWith("file://"))
+            imagePath = imagePath.substring(7);
+        elem.setPath(imagePath);
+        
         send(msg, elem, conversation, iTimCallback, isOnlineMsg);
     }
 

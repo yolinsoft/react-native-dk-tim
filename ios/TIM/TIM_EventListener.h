@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Define.h"
-@interface TIM_EventListener : NSObject<TIMConnListener,TIMMessageRevokeListener,TIMUploadProgressListener,TIMGroupEventListener>
+@interface TIM_EventListener : NSObject<TIMConnListener,TIMMessageRevokeListener,TIMUploadProgressListener,TIMGroupEventListener,TIMUserStatusListener>
 
 @end
 

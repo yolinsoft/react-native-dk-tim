@@ -35,35 +35,34 @@ NSString *const kTIMReceiveNotification = @"TIM_RECEIVE_NOTIFICATION";
 @end
 
 @implementation TIM
-
+{
+    bool _hasListeners;
+}
 RCT_EXPORT_MODULE();
 
 #pragma mark life cycle
 
--(void)dealloc
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:EVENT_CONNECTION object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:EVENT_MsgLocator object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:EVENT_UploaderProgress object:nil];
-    [[NSNotificationCenter defaultCenter]removeObserver:self name:EVENT_groupTips object:nil];
+
+
+-(void)startObserving{
+    _hasListeners = YES;
+    [self addNotifications];
 }
 
--(instancetype)init{
-    self = [super init];
-    if (self) {
-        [self initListeners];
-        [self addNotifications];
-    }
-    return self;
+-(void)stopObserving{
+//    [[NSNotificationCenter defaultCenter] removeObserver:self name:EVENT_CONNECTION object:nil];
+//    [[NSNotificationCenter defaultCenter] removeObserver:self name:EVENT_MsgLocator object:nil];
+//    [[NSNotificationCenter defaultCenter] removeObserver:self name:EVENT_UploaderProgress object:nil];
+//    [[NSNotificationCenter defaultCenter]removeObserver:self name:EVENT_groupTips object:nil];
+    _hasListeners = NO;
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
-
 //初始化监听
 - (void)initListeners
 {
     TIMManager *imManager = [TIMManager sharedInstance];
     [imManager addMessageListener:self];
 //    [TIMManager sharedInstance] disableCrashReport];
-    
 }
 
 -(void)addNotifications{
@@ -71,6 +70,12 @@ RCT_EXPORT_MODULE();
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(addMsgLocator:) name:EVENT_MsgLocator object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(addMsgUploaderProgress:) name:EVENT_UploaderProgress object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(groupTips:) name:EVENT_groupTips object:nil];
+    
+    //用户状态变更
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(forceOffLineHandle:) name:forceOffline object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(reConnFailed:) name:reConnFailed object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(userSigExpired:) name:reConnFailed object:nil];
+
 }
 
 #pragma TIMMessageListener
@@ -80,6 +85,7 @@ RCT_EXPORT_MODULE();
  *  @param msgs 新消息列表，TIMMessage 类型数组RT
  */
 - (void)onNewMessage:(NSArray*)msgs{
+   
     NSMutableArray *messageList = [[NSMutableArray alloc] init];
     for (TIMMessage *message in msgs)
     {
@@ -90,6 +96,8 @@ RCT_EXPORT_MODULE();
 //                                 msgId:[msg objectForKey:@"msgId"]
 //                               message:message];
     }
+    
+    
     [self sendEventWithName:EVENT_MESSAGE body:messageList];
 }
 
@@ -202,122 +210,7 @@ RCT_EXPORT_MODULE();
     [message addElem:elem];
     return message;
 }
-//- (NSArray*)createGroupChangeList:(NSArray*)groupChanges
-//{
-//    NSMutableArray *groupChangeList = [[NSMutableArray alloc] init];
-//
-//    for (TIMGroupTipsElemGroupInfo *group in groupChanges)
-//    {
-//        [groupChangeList addObject:[self createGroupChangeInfo:group]];
-//    }
-//
-//    return groupChangeList;
-//}
-//- (NSDictionary*)createGroupChangeInfo:(TIMGroupTipsElemGroupInfo*)group
-//{
-//    NSMutableDictionary *groupInfo = [[NSMutableDictionary alloc] init];
-//
-//    [groupInfo setValue:[NSNumber numberWithInteger:group.type] forKey:@"type"];
-//    [groupInfo setValue:group.value forKey:@"value"];
-//
-//    return groupInfo;
-//}
-//
-//- (NSDictionary*)createMemberChangeInfo:(TIMGroupTipsElemMemberInfo*)member
-//{
-//    NSMutableDictionary *memberInfo = [[NSMutableDictionary alloc] init];
-//
-//    [memberInfo setValue:member.identifier forKey:@"identifier"];
-//    [memberInfo setValue:[NSNumber numberWithUnsignedInt:member.shutupTime] forKey:@"shutupTime"];
-//
-//    return memberInfo;
-//}
-//- (NSArray*)createMemberChangeList:(NSArray*)memberChanges
-//{
-//    NSMutableArray *memberChangeList = [[NSMutableArray alloc] init];
-//
-//    for (TIMGroupTipsElemMemberInfo *member in memberChanges)
-//    {
-//        [memberChangeList addObject:[self createMemberChangeInfo:member]];
-//    }
-//
-//    return memberChangeList;
-//}
-//
-//- (NSDictionary*)createUserInfo:(TIMUserProfile*)profile
-//{
-//    NSMutableDictionary *userInfo = [[NSMutableDictionary alloc] init];
-//
-//    [userInfo setValue:profile.identifier forKey:@"identifier"];
-//    [userInfo setValue:profile.nickname forKey:@"nickname"];
-//    [userInfo setValue:profile.remark forKey:@"remark"];
-//    [userInfo setValue:[NSNumber numberWithInteger:profile.allowType] forKey:@"allowType"];
-//    [userInfo setValue:profile.faceURL forKey:@"faceURL"];
-//    [userInfo setValue:[[NSString alloc] initWithData:profile.selfSignature
-//                                             encoding:NSUTF8StringEncoding] forKey:@"selfSignature"];
-//    [userInfo setValue:[NSNumber numberWithInteger:profile.gender] forKey:@"gender"];
-//    [userInfo setValue:[NSNumber numberWithUnsignedInt:profile.birthday] forKey:@"birthday"];
-//    [userInfo setValue:[[NSString alloc] initWithData:profile.location
-//                                             encoding:NSUTF8StringEncoding] forKey:@"location"];
-//    [userInfo setValue:[NSNumber numberWithUnsignedInt:profile.language] forKey:@"language"];
-//    [userInfo setValue:profile.friendGroups forKey:@"friendGroups"];
-//    [userInfo setValue:profile.customInfo forKey:@"customInfo"];
-//
-//    return userInfo;
-//}
-//
-//- (NSDictionary*)createGroupMemberInfo:(TIMGroupMemberInfo*)memberInfo
-//{
-//    NSMutableDictionary *member = [[NSMutableDictionary alloc] init];
-//
-//    [member setValue:memberInfo.member forKey:@"member"];
-//    [member setValue:memberInfo.nameCard forKey:@"nameCard"];
-//    [member setValue:[NSNumber numberWithLong:memberInfo.joinTime] forKey:@"joinTime"];
-//    [member setValue:[NSNumber numberWithInteger:memberInfo.role] forKey:@"role"];
-//    [member setValue:[NSNumber numberWithUnsignedInt:memberInfo.silentUntil] forKey:@"silentUntil"];
-//    [member setValue:memberInfo.customInfo forKey:@"customInfo"];
-//    return member;
-//}
-//
-//- (NSDictionary*)createChangedUserInfo:(NSDictionary*)changedUserInfo
-//{
-//    NSMutableDictionary *infoList = [[NSMutableDictionary alloc] init];
-//
-//    for (NSString *key in changedUserInfo)
-//    {
-//        [infoList setValue:[self createUserInfo:[changedUserInfo objectForKey:key]] forKey:key];
-//    }
-//
-//    return infoList;
-//}
-//
-//- (NSDictionary*)createChangedGroupMemberInfo:(NSDictionary*)changedGroupMemberInfo
-//{
-//    NSMutableDictionary *infoList = [[NSMutableDictionary alloc] init];
-//
-//    for (NSString *key in changedGroupMemberInfo)
-//    {
-//        [infoList setValue:[self createGroupMemberInfo:[changedGroupMemberInfo objectForKey:key]] forKey:key];
-//    }
-//
-//    return infoList;
-//}
 
-
-#pragma mark  TIMUserStatusListener delegate
-/**
- *  踢下线通知
- */
-- (void)onForceOffline{
-    
-}
-
-/**
- *  断线重连失败
- */
-- (void)onReConnFailed:(int)code err:(NSString*)err{
-    
-}
 
 
 #pragma mark  TIMRefreshListener delegate
@@ -373,6 +266,7 @@ RCT_EXPORT_METHOD(initSdk:(NSDictionary*)sdkConfig resolver:(RCTPromiseResolveBl
                   rejecter:(RCTPromiseRejectBlock)reject)
 {
     TIMManager *imManager = [TIMManager sharedInstance];
+     [self initListeners];
     TIMSdkConfig *config = [[TIMSdkConfig alloc] init];
     config.sdkAppId =  [sdkConfig[@"sdkAppId"] intValue];
     config.accountType = sdkConfig[@"accountType"];
@@ -398,7 +292,7 @@ RCT_EXPORT_METHOD(setUserConfig:(NSDictionary*)config resolver:(RCTPromiseResolv
 {
     TIMManager *imManager = [TIMManager sharedInstance];
     TIMUserConfig *userConfig = [[TIMUserConfig alloc] init];
-    userConfig.userStatusListener = self;
+    userConfig.userStatusListener = self.eventListener;
     userConfig.refreshListener = self;
     userConfig.receiptListener = self;
     userConfig.messgeRevokeListener = self.eventListener;
@@ -689,23 +583,53 @@ RCT_EXPORT_METHOD(getConversationLastMsgType:(NSString *)type conversationId:(NS
 #pragma mark notification event
 -(void)addConnListener:(NSNotification *)notivicaiton{
     NSDictionary *dic = notivicaiton.userInfo;
-    [self sendEventWithName:EVENT_CONNECTION body:[dic mutableCopy]];
+    if (_hasListeners) {
+        [self sendEventWithName:EVENT_CONNECTION body:[dic mutableCopy]];
+    }
 }
 
 -(void)addMsgLocator:(NSNotification *)notivicaiton{
     NSDictionary *dic = notivicaiton.userInfo;
-    [self sendEventWithName:EVENT_MsgLocator body:[dic mutableCopy]];
+    if (_hasListeners) {
+        [self sendEventWithName:EVENT_MsgLocator body:[dic mutableCopy]];
+    }
 }
 
 //文件上传
 -(void)addMsgUploaderProgress:(NSNotification *)notivicaiton{
     NSDictionary *dic = notivicaiton.userInfo;
-    [self sendEventWithName:EVENT_UploaderProgress body:[dic mutableCopy]];
+    NSLog(@"文件上传进度===%@",dic);
+    if (_hasListeners) {
+        [self sendEventWithName:EVENT_UploaderProgress body:[dic mutableCopy]];
+    }
 }
 //群事件
 -(void)groupTips:(NSNotification *)notivicaition{
     NSDictionary *dic = notivicaition.userInfo;
-    [self sendEventWithName:EVENT_groupTips body:[dic copy]];
+    if (_hasListeners) {
+        [self sendEventWithName:EVENT_groupTips body:[dic copy]];
+    }
+}
+
+//用户被踢下线
+-(void)forceOffLineHandle:(NSNotification *)notification{
+    if (_hasListeners) {
+        [self sendEventWithName:forceOffline body:nil];
+    }
+}
+
+//断线重连失败
+-(void)reConnFailed:(NSNotification *)notification{
+    if (_hasListeners) {
+        [self sendEventWithName:reConnFailed body:notification.userInfo];
+    }
+}
+
+//用户票据过期
+-(void)userSigExpired:(NSNotification *)notification{
+    if (_hasListeners) {
+        [self sendEventWithName:userSigExpired body:notification.userInfo];
+    }
 }
 
 #pragma mark get or set

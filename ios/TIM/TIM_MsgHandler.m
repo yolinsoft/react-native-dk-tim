@@ -42,7 +42,7 @@
         [message setValue:[[msg getConversation] getReceiver] forKey:@"groupId"];
     }
     
-    [message setValue:elems forKey:@"elems"];
+    [message setValue:elems forKey:@"msg"];
     
     for (int i = 0; i < [msg elemCount]; i++)
     {
@@ -67,10 +67,14 @@
                 NSDictionary *imageDic = @{@"size": [NSNumber numberWithInt:image.size],
                                            @"width": [NSNumber numberWithInt:image.width],
                                            @"height": [NSNumber numberWithInt:image.height],
-                                           @"uuid": image.uuid};
+                                           @"uuid": image.uuid,
+                                           @"url":image.url
+                                           };
+                
                 if (image.type == TIM_IMAGE_TYPE_ORIGIN)
                 {
                     [elemDic setValue:imageDic forKey:@"origin"];
+                   
                 }
                 else if (image.type == TIM_IMAGE_TYPE_THUMB)
                 {
@@ -87,7 +91,9 @@
             TIMSoundElem *soundElem = (TIMSoundElem*)elem;
             elemDic = @{@"type": @"audio",
                         @"uuid": soundElem.uuid,
-                        @"duration": [NSNumber numberWithInt:soundElem.second]
+                        @"duration": [NSNumber numberWithInt:soundElem.second],
+                        @"path":soundElem.path,
+                        @"dataSize":[NSNumber numberWithInt:soundElem.dataSize],
                         };
         }
         else if([elem isKindOfClass:[TIMLocationElem class]])
@@ -105,7 +111,8 @@
             elemDic = @{@"type": @"file",
                         @"uuid": fileElem.uuid,
                         @"size": [NSNumber numberWithInt: fileElem.fileSize],
-                        @"filename": fileElem.filename
+                        @"filename": fileElem.filename,
+                        @"filePath":fileElem.path
                         };
         }
         else if([elem isKindOfClass:[TIMCustomElem class]])

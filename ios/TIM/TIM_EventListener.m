@@ -97,4 +97,28 @@
     NSDictionary *dic = [elem yy_modelToJSONObject];
     [[NSNotificationCenter defaultCenter]postNotificationName:EVENT_groupTips object:nil userInfo:dic];
 }
+
+
+#pragma mark TIMUserStatusListener
+/**
+ *  踢下线通知
+ */
+- (void)onForceOffline{
+    [[NSNotificationCenter defaultCenter]postNotificationName:forceOffline object:nil];
+}
+
+/**
+ *  断线重连失败
+ */
+- (void)onReConnFailed:(int)code err:(NSString*)err{
+    NSMutableDictionary *param = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"code",@(code),@"err",err, nil];
+    [[NSNotificationCenter defaultCenter]postNotificationName:reConnFailed object:nil];
+}
+
+/**
+ *  用户登录的userSig过期（用户需要重新获取userSig后登录）
+ */
+- (void)onUserSigExpired{
+    [[NSNotificationCenter defaultCenter]postNotificationName:userSigExpired object:nil];
+}
 @end
